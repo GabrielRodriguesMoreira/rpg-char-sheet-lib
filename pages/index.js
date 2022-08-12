@@ -2,9 +2,48 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { GrFormSearch } from 'react-icons/gr';
+import { TiPlusOutline } from 'react-icons/ti';
 import { Card } from './componenets/Card.js'
 
+
 export default function Home() {
+
+  var arr = [{
+    name: 'mage',
+    img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
+  },
+  {
+    name: 'crusade',
+    img: 'http://images6.fanpop.com/image/photos/40600000/Saber-fate-series-40641981-1200-2251.png',
+  },
+  {
+    name: 'ranger',
+    img: 'https://i.pinimg.com/originals/02/54/64/0254645c2624a84aac9a18e92df27c82.png',
+  }, {
+    name: 'mage',
+    img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
+  },
+  {
+    name: 'crusade',
+    img: 'http://images6.fanpop.com/image/photos/40600000/Saber-fate-series-40641981-1200-2251.png',
+  },
+  {
+    name: 'ranger',
+    img: 'https://i.pinimg.com/originals/02/54/64/0254645c2624a84aac9a18e92df27c82.png',
+  }, {
+    name: 'mage',
+    img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
+  },
+  {
+    name: 'crusade',
+    img: 'http://images6.fanpop.com/image/photos/40600000/Saber-fate-series-40641981-1200-2251.png',
+  },
+  {
+    name: 'ranger',
+    img: 'https://i.pinimg.com/originals/02/54/64/0254645c2624a84aac9a18e92df27c82.png',
+  },
+  ]
+
   return (
     <div className={styles.container}>
       <Head>
@@ -32,21 +71,16 @@ export default function Home() {
       </aside>
 
       <main className={styles.main}>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {arr.map(({ img, name, }) => (
+          <Card img={img} name={name} />
+        ))}
       </main>
 
       <div className={styles.right}></div>
 
-
+      <div className={styles.creator}>
+        <TiPlusOutline />
+      </div>
     </div>
 
 
