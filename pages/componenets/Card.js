@@ -1,11 +1,20 @@
+
+import { useEffect, useState } from 'react';
 import styles from '../../styles/card.module.css'
-import { Cardinfos } from './Cardinfos';
+
+
 export function Card(props) {
+
+    const [data, setdata] = useState('')
+
+    useEffect(() => {
+        setdata(props.data)
+    }, [])
 
     return (
         <div className={styles.card_container} >
-            <img src={props.arr.img} alt="" />
-            <p>{props.arr.name}</p>
+            <img src={data.img} alt="" />
+            <p>{data.name}</p>
         </div>
     )
 }

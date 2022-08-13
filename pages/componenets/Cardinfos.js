@@ -1,7 +1,10 @@
-export function Cardinfos(props) {
+import { useState } from "react";
+
+export function Cardinfos() {
+
 
     return (
-        <h1>{props.infos.name}</h1>
+        <h1></h1>
     )
 }
 export default Cardinfos;

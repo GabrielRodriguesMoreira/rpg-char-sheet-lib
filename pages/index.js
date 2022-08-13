@@ -8,18 +8,18 @@ import { Cardinfos } from './componenets/Cardinfos';
 
 export default function Home() {
 
-  var arr = [{
-    id: String(Date.now),
+  const arr = [{
+    id: String(Date.now()),
     name: 'mage',
     img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
   },
   {
-    id: String(Date.now),
+    id: String(Date.now()),
     name: 'crusader',
-    img: 'https://static.wikia.nocookie.net/finalfantasy/images/c/c8/WotV_Agrias.png',
+    img: 'https://static.wikia.nocookie.net/finalfantasy/images/c/c8/WotV_Agrias.png  ',
   },
   {
-    id: String(Date.now),
+    id: String(Date.now()),
     name: 'ranger',
     img: 'https://i.pinimg.com/originals/02/54/64/0254645c2624a84aac9a18e92df27c82.png',
   },
@@ -35,7 +35,6 @@ export default function Home() {
     settabs(tabs => [...tabs, arr[index]])
     console.log(tabs)
   }
-
   return (
     <div className={styles.container}>
       <Head>
@@ -65,7 +64,7 @@ export default function Home() {
       <main className={styles.main}>
         {
           arr.map(function (elements) {
-            return (<div key={Math.random()} id={elements.id} onClick={() => { createtab(elements.id) }}><Card arr={elements} /></div>)
+            return (<div key={Math.random()}> <Card data={elements} /></div>)
           })}
       </main>
 
