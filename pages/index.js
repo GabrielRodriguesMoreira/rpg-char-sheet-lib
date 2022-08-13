@@ -79,7 +79,7 @@ export default function Home() {
 
       <div className={styles.creator}>
 
-        <TiPlusOutline />
+        <TiPlusOutline key={String(Math.random())} />
       </div>
     </div>
   )
