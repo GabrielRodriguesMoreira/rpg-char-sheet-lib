@@ -9,17 +9,17 @@ import { Cardinfos } from './componenets/Cardinfos';
 export default function Home() {
 
   var arr = [{
-    id: String(Math.random()),
+    id: String(Date.now),
     name: 'mage',
     img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
   },
   {
-    id: String(Math.random()),
+    id: String(Date.now),
     name: 'crusader',
     img: 'http://images6.fanpop.com/image/photos/40600000/Saber-fate-series-40641981-1200-2251.png',
   },
   {
-    id: String(Math.random()),
+    id: String(Date.now),
     name: 'ranger',
     img: 'https://i.pinimg.com/originals/02/54/64/0254645c2624a84aac9a18e92df27c82.png',
   },
