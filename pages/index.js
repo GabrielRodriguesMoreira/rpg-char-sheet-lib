@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { useState } from 'react';
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { GrFormSearch } from 'react-icons/gr';
 import { TiPlusOutline } from 'react-icons/ti';
@@ -65,14 +64,14 @@ export default function Home() {
 
       <main className={styles.main}>
         {arr.map(function (element) {
-          return <div id={element.id} onClick={() => { createtab(element.id) }}><Card arr={element} key={element.id} /></div>
+          return <div key={Math.random()} id={element.id} onClick={() => { createtab(element.id) }}><Card key={element.id} arr={element} /></div>
         })}
       </main>
 
       <div className={styles.right} id='right'>
         {
           tabs.map(function (element) {
-            return <Cardinfos infos={element} key={element.id} />
+            return <Cardinfos key={element.id} infos={element} />
           })
         }
       </div>
