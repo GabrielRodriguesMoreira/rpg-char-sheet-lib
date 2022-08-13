@@ -63,15 +63,17 @@ export default function Home() {
       </aside>
 
       <main className={styles.main}>
-        {arr.map(function (element) {
-          return <div key={Math.random()} id={element.id} onClick={() => { createtab(element.id) }}><Card key={element.id} arr={element} /></div>
-        })}
+        {
+          arr.map(function (elements) {
+            return (<div key={Math.random()} id={elements.id} onClick={() => { createtab(elements.id) }}><Card arr={elements} /></div>)
+          })}
       </main>
 
       <div className={styles.right} id='right'>
         {
           tabs.map(function (element) {
-            return <Cardinfos key={element.id} infos={element} />
+            return <Cardinfos key={Math.random()}
+              infos={element} />
           })
         }
       </div>
