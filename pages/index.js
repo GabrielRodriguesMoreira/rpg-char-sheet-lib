@@ -16,7 +16,7 @@ export default function Home() {
   {
     id: String(Date.now),
     name: 'crusader',
-    img: 'http://images6.fanpop.com/image/photos/40600000/Saber-fate-series-40641981-1200-2251.png',
+    img: 'https://static.wikia.nocookie.net/finalfantasy/images/c/c8/WotV_Agrias.png',
   },
   {
     id: String(Date.now),
