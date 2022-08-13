@@ -29,7 +29,7 @@ export default function Home() {
   const [tabs, settabs] = useState([])
 
 
-  function djamba(id) {
+  function createtab(id) {
     const index = arr.findIndex(object => {
       return object.id === id;
     });
@@ -65,20 +65,19 @@ export default function Home() {
 
       <main className={styles.main}>
         {arr.map(function (element) {
-          return <div id={element.id} onClick={() => { djamba(element.id) }}><Card arr={element} key={Math.random()} /></div>
+          return <div id={element.id} onClick={() => { createtab(element.id) }}><Card arr={element} key={element.id} /></div>
         })}
       </main>
 
       <div className={styles.right} id='right'>
         {
           tabs.map(function (element) {
-            return <Cardinfos infos={element} key={Math.random()} />
+            return <Cardinfos infos={element} key={element.id} />
           })
         }
       </div>
 
       <div className={styles.creator}>
-
         <TiPlusOutline />
       </div>
     </div>
