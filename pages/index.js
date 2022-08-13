@@ -72,14 +72,14 @@ export default function Home() {
       <div className={styles.right} id='right'>
         {
           tabs.map(function (element) {
-            return <Cardinfos infos={element} key={String(Math.random())} />
+            return <Cardinfos infos={element} key={Math.random()} />
           })
         }
       </div>
 
       <div className={styles.creator}>
 
-        <TiPlusOutline key={String(Math.random())} />
+        <TiPlusOutline />
       </div>
     </div>
   )
