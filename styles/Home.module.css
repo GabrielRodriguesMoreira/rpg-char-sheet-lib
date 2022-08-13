@@ -60,9 +60,11 @@
     display: flex;
     flex-wrap: wrap;
     gap: 15px 10px;
+    max-height: 100vh;
+    overflow: auto;
 }
 .right{
-    flex: 0.31;
+    flex: 0.30;
     height: 100%;
     box-shadow:  -1px 0px 7px 1px rgba(0,0,0,0.66)
 }
@@ -80,4 +82,5 @@
     font-size: 40px;
     color: var(--txt-color);
     box-shadow: 0px 2px 12px 0px rgba(0,0,0,0.79);
+    cursor: pointer;
 }
