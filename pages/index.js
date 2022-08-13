@@ -1,10 +1,11 @@
 import Head from 'next/head'
+import { useState } from 'react';
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { GrFormSearch } from 'react-icons/gr';
 import { TiPlusOutline } from 'react-icons/ti';
 import { Card } from './componenets/Card.js'
-
+import { Cardinfos } from './componenets/Cardinfos';
 
 export default function Home() {
 
@@ -13,7 +14,7 @@ export default function Home() {
     img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
   },
   {
-    name: 'crusade',
+    name: 'crusader',
     img: 'http://images6.fanpop.com/image/photos/40600000/Saber-fate-series-40641981-1200-2251.png',
   },
   {
@@ -150,7 +151,7 @@ export default function Home() {
           <GrFormSearch className={styles.icon} />
         </fieldset>
         <nav>
-          <a href="#">CHARACTERS</a>
+          <a href="#" >CHARACTERS</a>
           <a href="#">MAPS</a>
           <a href="#">GUILDS</a>
           <a href="#">HISTORIES</a>
@@ -159,12 +160,12 @@ export default function Home() {
       </aside>
 
       <main className={styles.main}>
-        {arr.map(({ img, name, }) => (
-          <Card img={img} name={name} key={Math.random()} />
-        ))}
+        {arr.map(function (element) {
+          return <Card arr={element} key={Math.random()} />
+        })}
       </main>
 
-      <div className={styles.right}>
+      <div className={styles.right} id='right'>
 
       </div>
 
@@ -172,7 +173,6 @@ export default function Home() {
         <TiPlusOutline />
       </div>
     </div>
-
-
   )
+
 }
