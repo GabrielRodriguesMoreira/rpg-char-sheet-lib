@@ -10,128 +10,32 @@ import { Cardinfos } from './componenets/Cardinfos';
 export default function Home() {
 
   var arr = [{
+    id: String(Math.random()),
     name: 'mage',
     img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
   },
   {
+    id: String(Math.random()),
     name: 'crusader',
     img: 'http://images6.fanpop.com/image/photos/40600000/Saber-fate-series-40641981-1200-2251.png',
   },
   {
-    name: 'ranger',
-    img: 'https://i.pinimg.com/originals/02/54/64/0254645c2624a84aac9a18e92df27c82.png',
-  }, {
-    name: 'mage',
-    img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
-  },
-  {
-    name: 'crusade',
-    img: 'http://images6.fanpop.com/image/photos/40600000/Saber-fate-series-40641981-1200-2251.png',
-  },
-  {
-    name: 'ranger',
-    img: 'https://i.pinimg.com/originals/02/54/64/0254645c2624a84aac9a18e92df27c82.png',
-  }, {
-    name: 'mage',
-    img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
-  },
-  {
-    name: 'crusade',
-    img: 'http://images6.fanpop.com/image/photos/40600000/Saber-fate-series-40641981-1200-2251.png',
-  },
-  {
-    name: 'ranger',
-    img: 'https://i.pinimg.com/originals/02/54/64/0254645c2624a84aac9a18e92df27c82.png',
-  }, {
-    name: 'mage',
-    img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
-  },
-  {
-    name: 'crusade',
-    img: 'http://images6.fanpop.com/image/photos/40600000/Saber-fate-series-40641981-1200-2251.png',
-  },
-  {
-    name: 'ranger',
-    img: 'https://i.pinimg.com/originals/02/54/64/0254645c2624a84aac9a18e92df27c82.png',
-  }, {
-    name: 'mage',
-    img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
-  },
-  {
-    name: 'crusade',
-    img: 'http://images6.fanpop.com/image/photos/40600000/Saber-fate-series-40641981-1200-2251.png',
-  },
-  {
-    name: 'ranger',
-    img: 'https://i.pinimg.com/originals/02/54/64/0254645c2624a84aac9a18e92df27c82.png',
-  }, {
-    name: 'mage',
-    img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
-  },
-  {
-    name: 'crusade',
-    img: 'http://images6.fanpop.com/image/photos/40600000/Saber-fate-series-40641981-1200-2251.png',
-  },
-  {
-    name: 'ranger',
-    img: 'https://i.pinimg.com/originals/02/54/64/0254645c2624a84aac9a18e92df27c82.png',
-  }, {
-    name: 'mage',
-    img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
-  },
-  {
-    name: 'crusade',
-    img: 'http://images6.fanpop.com/image/photos/40600000/Saber-fate-series-40641981-1200-2251.png',
-  },
-  {
-    name: 'ranger',
-    img: 'https://i.pinimg.com/originals/02/54/64/0254645c2624a84aac9a18e92df27c82.png',
-  }, {
-    name: 'mage',
-    img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
-  },
-  {
-    name: 'crusade',
-    img: 'http://images6.fanpop.com/image/photos/40600000/Saber-fate-series-40641981-1200-2251.png',
-  },
-  {
-    name: 'ranger',
-    img: 'https://i.pinimg.com/originals/02/54/64/0254645c2624a84aac9a18e92df27c82.png',
-  }, {
-    name: 'mage',
-    img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
-  },
-  {
-    name: 'crusade',
-    img: 'http://images6.fanpop.com/image/photos/40600000/Saber-fate-series-40641981-1200-2251.png',
-  },
-  {
-    name: 'ranger',
-    img: 'https://i.pinimg.com/originals/02/54/64/0254645c2624a84aac9a18e92df27c82.png',
-  }, {
-    name: 'mage',
-    img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
-  },
-  {
-    name: 'crusade',
-    img: 'http://images6.fanpop.com/image/photos/40600000/Saber-fate-series-40641981-1200-2251.png',
-  },
-  {
-    name: 'ranger',
-    img: 'https://i.pinimg.com/originals/02/54/64/0254645c2624a84aac9a18e92df27c82.png',
-  }, {
-    name: 'mage',
-    img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
-  },
-  {
-    name: 'crusade',
-    img: 'http://images6.fanpop.com/image/photos/40600000/Saber-fate-series-40641981-1200-2251.png',
-  },
-  {
+    id: String(Math.random()),
     name: 'ranger',
     img: 'https://i.pinimg.com/originals/02/54/64/0254645c2624a84aac9a18e92df27c82.png',
   },
   ]
+
+  const [tabs, settabs] = useState([])
+
+
+  function djamba(id) {
+    const index = arr.findIndex(object => {
+      return object.id === id;
+    });
+    settabs(tabs => [...tabs, arr[index]])
+    console.log(tabs)
+  }
 
   return (
     <div className={styles.container}>
@@ -161,15 +65,20 @@ export default function Home() {
 
       <main className={styles.main}>
         {arr.map(function (element) {
-          return <Card arr={element} key={Math.random()} />
+          return <div id={element.id} onClick={() => { djamba(element.id) }}><Card arr={element} key={Math.random()} /></div>
         })}
       </main>
 
       <div className={styles.right} id='right'>
-
+        {
+          tabs.map(function (element) {
+            return <Cardinfos infos={element} />
+          })
+        }
       </div>
 
       <div className={styles.creator}>
+
         <TiPlusOutline />
       </div>
     </div>
