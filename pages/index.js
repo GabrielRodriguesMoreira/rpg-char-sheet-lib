@@ -72,7 +72,7 @@ export default function Home() {
       <div className={styles.right} id='right'>
         {
           tabs.map(function (element) {
-            return <Cardinfos infos={element} />
+            return <Cardinfos infos={element} key={String(Math.random())} />
           })
         }
       </div>
