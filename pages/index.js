@@ -33,7 +33,7 @@ export default function Home() {
       name: 'mage',
       img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
     }
-    arr.unshift(newcard);
+    setarr(arr => [newcard, ...arr])
     console.log(arr)
   }
 
@@ -80,6 +80,7 @@ export default function Home() {
 
       <div className={styles.right} id='right'>
         {
+
           tabs.map(function (element) {
             return <Cardinfos key={Math.random()}
               infos={element} />
