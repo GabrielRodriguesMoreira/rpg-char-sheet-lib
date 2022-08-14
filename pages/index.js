@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../styles/Home.module.css'
 import { GrFormSearch } from 'react-icons/gr';
 import { TiPlusOutline } from 'react-icons/ti';
@@ -8,7 +8,7 @@ import { Cardinfos } from './componenets/Cardinfos';
 
 export default function Home() {
 
-  const arr = [{
+  const [arr, setarr] = useState([{
     id: String(Math.random()),
     name: 'mage',
     img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
@@ -23,18 +23,16 @@ export default function Home() {
     name: 'ranger',
     img: 'https://i.pinimg.com/originals/02/54/64/0254645c2624a84aac9a18e92df27c82.png',
   },
-  ]
+  ])
 
   const [tabs, settabs] = useState([])
 
 
-  console.log(arr);
   function createtab(id) {
     const index = arr.findIndex(object => {
       return object.id === id;
     });
     settabs(tabs => [...tabs, arr[index]])
-    console.log(tabs)
   }
   return (
     <div className={styles.container}>
@@ -66,7 +64,8 @@ export default function Home() {
         {
           arr.map(function (elements) {
             return (<div key={Math.random()} onClick={() => { createtab(elements.id) }}> <Card data={elements} /></div>)
-          })}
+          })
+        }
       </main>
 
       <div className={styles.right} id='right'>
