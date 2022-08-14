@@ -27,6 +27,15 @@ export default function Home() {
 
   const [tabs, settabs] = useState([])
 
+  function cardcreator() {
+    let newcard = {
+      id: String(Math.random()),
+      name: 'mage',
+      img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
+    }
+    arr.unshift(newcard);
+    console.log(arr)
+  }
 
   function createtab(id) {
     const index = arr.findIndex(object => {
@@ -34,6 +43,7 @@ export default function Home() {
     });
     settabs(tabs => [...tabs, arr[index]])
   }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -46,7 +56,7 @@ export default function Home() {
       </Head>
 
       <aside className={styles.aside}>
-        <div className={styles.logo}> <img src="https://event.wwtonline.co.uk/security/wp-content/uploads/sites/94/2021/06/WUK-logo-Teal-RGB.png" alt="" /></div>
+        <div className={styles.logo}> <img src="https://www.rederpg.com.br/wp/wp-content/uploads/2020/05/DD-Logo.png" alt="" /></div>
         <fieldset>
           <input type="text" placeholder='Search Something' />
           <GrFormSearch className={styles.icon} />
@@ -77,7 +87,7 @@ export default function Home() {
         }
       </div>
 
-      <div className={styles.creator}>
+      <div className={styles.creator} onClick={cardcreator}>
         <TiPlusOutline />
       </div>
     </div>
