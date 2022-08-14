@@ -8,7 +8,7 @@ console.log(data)
 
 export default function Characters(props) {
   return (
-    <div className={styles.main}>
+    <div key={Math.random()} className={styles.main}>
       {data.map(function (element) {
         return <Card data={element} />
       })}
