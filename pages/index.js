@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import { GrFormSearch } from 'react-icons/gr';
 import { TiPlusOutline } from 'react-icons/ti';
 import { Card } from './componenets/Card.js'
+import { Maps } from './componenets/Maps.js'
 import { Cardinfos } from './componenets/Cardinfos';
 
 export default function Home() {
@@ -26,6 +27,8 @@ export default function Home() {
   ])
 
   const [tabs, settabs] = useState([])
+
+  const [active, setactive] = useState("Characters")
 
   function cardcreator() {
     let newcard = {
@@ -62,8 +65,8 @@ export default function Home() {
           <GrFormSearch className={styles.icon} />
         </fieldset>
         <nav>
-          <a href="#" >CHARACTERS</a>
-          <a href="#">MAPS</a>
+          <a href="#" onClick={() => { setactive("Characters") }}>CHARACTERS</a>
+          <a href="#" onClick={() => { setactive("Maps") }}>MAPS</a>
           <a href="#">GUILDS</a>
           <a href="#">HISTORIES</a>
           <a href="#">DICES</a>
@@ -71,11 +74,9 @@ export default function Home() {
       </aside>
 
       <main className={styles.main}>
-        {
-          arr.map(function (elements) {
-            return (<div key={Math.random()} onClick={() => { createtab(elements.id) }}> <Card data={elements} /></div>)
-          })
-        }
+        {active === "Characters" && <Characters />}
+        {active === "Maps" && <Maps />}
+
       </main>
 
       <div className={styles.right} id='right'>
@@ -93,5 +94,18 @@ export default function Home() {
       </div>
     </div>
   )
+
+
+
+
+
+
+  function Characters() {
+    return (
+      arr.map(function (elements) {
+        return (<div key={Math.random()} onClick={() => { createtab(elements.id) }}> <Card data={elements} /></div>)
+      })
+    )
+  }
 
 }
