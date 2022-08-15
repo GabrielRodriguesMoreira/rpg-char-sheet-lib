@@ -21,7 +21,7 @@ export function Aside() {
                 }} as="/" >
                     <a >CHARACTERS</a>
                 </Link>
-                <Link href="./componenets/Maps">
+                <Link href="../../componenets/Maps">
                     <a>MAPS</a>
                 </Link>
                 <a href="#">GUILDS</a>

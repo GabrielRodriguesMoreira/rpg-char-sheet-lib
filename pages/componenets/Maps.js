@@ -1,6 +1,6 @@
 export function Maps() {
     return (
-        <h1>RELOU MOTO </h1>
+        <h1>MAPS </h1>
     )
 }
 

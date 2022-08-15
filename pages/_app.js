@@ -10,27 +10,14 @@ import { Maps } from './componenets/Maps';
 
 function MyApp({ Component, pageProps }) {
 
-  const [tabs, settabs] = useState([])
 
+  const [tabs, settabs] = useState([])
   function createtab(id) {
     const index = arr.findIndex(object => {
       return object.id === id;
     });
     settabs(tabs => [...tabs, arr[index]])
   }
-
-  const [cards, setcards] = useState([
-  ])
-
-  function cardcreator() {
-    let newcard = {
-      id: String(Math.random()),
-      name: 'mage',
-      img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
-    }
-    setcards(cards => [newcard, ...cards])
-  }
-
 
   return (
     <div className="container">
@@ -42,7 +29,9 @@ function MyApp({ Component, pageProps }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap" rel="stylesheet" />
       </Head>
+
       <Aside />
+
       <Component {...pageProps} />
 
       <div className="right" id='right'>
@@ -54,7 +43,7 @@ function MyApp({ Component, pageProps }) {
         }
       </div>
 
-      <div className="creator" onClick={cardcreator} >
+      <div className="creator" >
         <TiPlusOutline />
       </div>
     </div>
