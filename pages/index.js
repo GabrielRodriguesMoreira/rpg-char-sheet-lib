@@ -27,8 +27,8 @@ export default function Home() {
   ])
 
   const [tabs, settabs] = useState([])
-
   const [active, setactive] = useState("Characters")
+  const [curinfos, setcurinfos] = useState()
 
   function cardcreator() {
     let newcard = {
@@ -37,7 +37,7 @@ export default function Home() {
       img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
     }
     setarr(arr => [newcard, ...arr])
-    console.log(arr)
+
   }
 
   function createtab(id) {
@@ -45,6 +45,15 @@ export default function Home() {
       return object.id === id;
     });
     settabs(tabs => [...tabs, arr[index]])
+    changeinfos(arr[index]);
+    console.log(curinfos)
+  }
+
+  function removetab(id) {
+
+  }
+  function changeinfos(obj) {
+    setcurinfos(obj)
   }
 
   return (
@@ -71,6 +80,10 @@ export default function Home() {
           <a href="#">HISTORIES</a>
           <a href="#">DICES</a>
         </nav>
+
+        <div className={styles.creator} onClick={cardcreator}>
+          <TiPlusOutline />
+        </div>
       </aside>
 
       <main className={styles.main}>
@@ -80,18 +93,24 @@ export default function Home() {
       </main>
 
       <div className={styles.right} id='right'>
-        {
+        <div className={styles.infosnav}>
+          {
 
-          tabs.map(function (element) {
-            return <Cardinfos key={Math.random()}
-              infos={element} />
-          })
+            tabs.map(function (element) {
+              return <Cardinfos key={Math.random()}
+                infos={element} func={changeinfos} />
+            })
+          }
+        </div>
+        {
+          <div>
+            <h1 >{curinfos ? curinfos.name : ""} </h1>
+            <img src={curinfos ? curinfos.img : ""} onerror="this.style.display='none'" />
+          </div>
         }
       </div>
 
-      <div className={styles.creator} onClick={cardcreator}>
-        <TiPlusOutline />
-      </div>
+
     </div>
   )
 
