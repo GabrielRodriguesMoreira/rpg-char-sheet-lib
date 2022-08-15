@@ -3,3 +3,5 @@ export function Maps() {
         <h1>maps</h1>
     )
 }
+
+export default Maps;
