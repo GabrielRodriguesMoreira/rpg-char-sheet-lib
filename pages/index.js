@@ -105,7 +105,7 @@ export default function Home() {
         {
           <div>
             <h1 >{curinfos ? curinfos.name : ""} </h1>
-            <img src={curinfos ? curinfos.img : ""} onerror="this.style.display='none'" />
+            <img src={curinfos ? curinfos.img : ""} onError="this.style.display='none'" />
           </div>
         }
       </div>
