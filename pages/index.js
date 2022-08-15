@@ -5,12 +5,12 @@ import styles from '../styles/Home.module.css'
 import { GrFormSearch } from 'react-icons/gr';
 import { TiPlusOutline } from 'react-icons/ti';
 import { Card } from './componenets/Card.js'
-import { Maps } from './componenets/Maps.js'
+import { Map } from './componenets/Map.js'
 import { Cardinfos } from './componenets/Cardinfos';
 
 export default function Home() {
 
-  const [arr, setarr] = useState([{
+  const [chars, setchars] = useState([{
     id: String(Math.random()),
     name: 'mage',
     img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
@@ -26,6 +26,16 @@ export default function Home() {
     img: 'https://i.pinimg.com/originals/02/54/64/0254645c2624a84aac9a18e92df27c82.png',
   },
   ])
+  const [maps, setmaps] = useState([{
+    id: String(Math.random()),
+    img: "https://i.pinimg.com/originals/9c/92/eb/9c92ebecdd604aa01e0827d864f0dae1.jpg",
+    name: "Earth Chain"
+  }, {
+    id: String(Math.random()),
+    img: "https://cdnb.artstation.com/p/assets/images/images/026/524/075/large/daniel-mitchell-daniel-mitchell-forest-settlement.jpg",
+    name: "Lost Woods"
+  },
+  ])
   const [tabs, settabs] = useState([])
   const [active, setactive] = useState("Characters")
   const [curinfos, setcurinfos] = useState()
@@ -36,16 +46,16 @@ export default function Home() {
       name: 'mage',
       img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
     }
-    setarr(arr => [newcard, ...arr])
+    setchars(chars => [newcard, ...chars])
 
   }
 
   function createtab(id) {
-    const index = arr.findIndex(object => {
+    const index = chars.findIndex(object => {
       return object.id === id;
     });
-    settabs(tabs => [...tabs, arr[index]])
-    changeinfos(arr[index]);
+    settabs(tabs => [...tabs, chars[index]])
+    changeinfos(chars[index]);
   }
 
   function changeinfos(obj) {
@@ -109,8 +119,6 @@ export default function Home() {
           <img src={curinfos ? curinfos.img : ""} id='holderimg' onError={() => { document.getElementById("holderimg").style.display = 'none' }} />
         </div>
       </div>
-
-
     </div>
   )
 
@@ -121,10 +129,17 @@ export default function Home() {
 
   function Characters() {
     return (
-      arr.map(function (elements) {
+      chars.map(function (elements) {
         return (<div key={Math.random()} onClick={() => { createtab(elements.id) }}> <Card data={elements} /></div>)
       })
     )
   }
 
+  function Maps() {
+    return (
+      maps.map(function (elements) {
+        return (<div key={Math.random()} > <Map data={elements} /></div>)
+      })
+    )
+  }
 }
