@@ -7,6 +7,8 @@ import { TiPlusOutline } from 'react-icons/ti';
 import { Card } from './componenets/Card.js'
 import { Map } from './componenets/Map.js'
 import { Cardinfos } from './componenets/Cardinfos';
+import { Guild } from './componenets/Guild';
+import { History } from './componenets/History';
 
 export default function Home() {
 
@@ -40,6 +42,7 @@ export default function Home() {
   const [active, setactive] = useState("Characters")
   const [curinfos, setcurinfos] = useState()
 
+
   function cardcreator() {
     let newcard = {
       id: String(Math.random()),
@@ -51,11 +54,21 @@ export default function Home() {
   }
 
   function createtab(id) {
-    const index = chars.findIndex(object => {
+    let index = chars.findIndex(object => {
       return object.id === id;
     });
-    settabs(tabs => [...tabs, chars[index]])
-    changeinfos(chars[index]);
+
+    let tabsindex = tabs.findIndex(object => {
+      return object.id == id;
+    });
+
+    if (tabs.filter(e => e.id === id).length > 0) {
+      changeinfos(tabs[tabsindex]);
+    } else {
+      settabs(tabs => [...tabs, chars[index]])
+      changeinfos(chars[index]);
+    }
+
   }
 
   function changeinfos(obj) {
@@ -63,7 +76,14 @@ export default function Home() {
   }
 
   function removetab(id) {
+
+    let tabsindex = tabs.findIndex(object => {
+      return object.id == id;
+    });
+
+    changeinfos(tabsindex > 0 ? tabs[tabsindex - 1] : tabs[tabsindex + 1])
     settabs(tabs.filter(item => item.id != id))
+
   }
 
 
@@ -87,8 +107,8 @@ export default function Home() {
         <nav>
           <a href="#" onClick={() => { setactive("Characters") }}>CHARACTERS</a>
           <a href="#" onClick={() => { setactive("Maps") }}>MAPS</a>
-          <a href="#">GUILDS</a>
-          <a href="#">HISTORIES</a>
+          <a href="#" onClick={() => { setactive("Guilds") }}>GUILDS</a>
+          <a href="#" onClick={() => { setactive("Histories") }}>HISTORIES</a>
           <a href="#">DICES</a>
         </nav>
 
@@ -100,13 +120,14 @@ export default function Home() {
       <main className={styles.main}>
         {active === "Characters" && <Characters />}
         {active === "Maps" && <Maps />}
+        {active === "Guilds" && <Guild />}
+        {active === "Histories" && <History />}
 
       </main>
 
       <div className={styles.right} id='right'>
         <div className={styles.infosnav} >
           {
-
             tabs.map(function (element) {
               return <Cardinfos key={Math.random()}
                 infos={element} func={changeinfos} removetab={removetab} />
@@ -116,7 +137,7 @@ export default function Home() {
 
         <div>
           <h1 >{curinfos ? curinfos.name : ""} </h1>
-          <img src={curinfos ? curinfos.img : ""} id='holderimg' onError={() => { document.getElementById("holderimg").style.display = 'none' }} />
+          <img src={curinfos ? curinfos.img : ""} id='holderimg' />
         </div>
       </div>
     </div>
@@ -139,6 +160,22 @@ export default function Home() {
     return (
       maps.map(function (elements) {
         return (<div key={Math.random()} > <Map data={elements} /></div>)
+      })
+    )
+  }
+
+  function Guilds() {
+    return (
+      maps.map(function (elements) {
+        return (<div key={Math.random()} > <Guild data={elements} /></div>)
+      })
+    )
+  }
+
+  function Histories() {
+    return (
+      maps.map(function (elements) {
+        return (<div key={Math.random()} > <History data={elements} /></div>)
       })
     )
   }

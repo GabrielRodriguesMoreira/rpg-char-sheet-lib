@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-
+import { AiFillCloseCircle } from 'react-icons/ai';
+import styles from '../../styles/cardinfo.module.css'
 export function Cardinfos(props) {
     const data = props.infos;
 
@@ -8,9 +8,9 @@ export function Cardinfos(props) {
     }
 
     return (
-        <div >
+        <div className={styles.info_container}>
             <p onClick={() => { props.func({ name: data.name, img: data.img }) }}>{data ? data.name : "alt"}</p>
-            <button onClick={pix}>Del</button>
+            <button onClick={pix}><AiFillCloseCircle /></button>
         </div>
     )
 }

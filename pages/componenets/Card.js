@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useCallback } from 'react';
 import styles from '../../styles/card.module.css'
 
 
