@@ -41,7 +41,7 @@ export default function Home() {
   const [tabs, settabs] = useState([])
   const [active, setactive] = useState("Characters")
   const [curinfos, setcurinfos] = useState()
-
+  const [activeinfo, setactiveinfo] = useState(<Maps />)
 
   function cardcreator() {
     let newcard = {
