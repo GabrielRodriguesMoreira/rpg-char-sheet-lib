@@ -34,34 +34,3 @@ a {
 {
 	background-color: #000000;
 }
-
-.container{
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  justify-content: space-between;
-  background-color: #F9F6EE;
-}
-
-.creator{
-  width: 60px;
-  height: 60px;
-  position: fixed;
-  bottom: 15px;
-  left: 15px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-  color: var(--txt-color);
-  box-shadow: 0px 2px 12px 0px rgba(0,0,0,0.79);
-  cursor: pointer;
-  z-index: 1;
-}
-
-.right{
-  flex: 0.30;
-  height: 100%;
-  box-shadow:  -1px 0px 7px 1px rgba(0,0,0,0.66)
-}
