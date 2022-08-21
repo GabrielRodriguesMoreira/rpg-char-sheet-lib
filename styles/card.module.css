@@ -1,0 +1,26 @@
+.card_container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 140px;
+    height: 190px;
+    box-shadow: 0px 0px 5px 0.2px rgba(0,0,0,0.52);
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+.card_container:hover{
+    box-shadow: 2px 2px 5px 4px rgba(0,0,0,0.52);
+}
+.card_container img{
+    height: 100%;
+}
+.card_container p{
+    position: absolute;
+    width: 100%;
+    bottom: 10%;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: white;
+    letter-spacing: 0.3px;
+}

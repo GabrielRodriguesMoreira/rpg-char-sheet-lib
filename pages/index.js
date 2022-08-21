@@ -15,19 +15,19 @@ export default function Home() {
     const [chars, setchars] = useState([{
         id: String(Math.random()),
         type: "char",
-        name: 'mage',
+        name: 'Mage',
         img: 'https://static.wikia.nocookie.net/lawler-rpg/images/2/2c/Dissidia_black_mage_of_light_by_isaiahjordan-d5hz8q6.png',
     },
     {
         id: String(Math.random()),
         type: "char",
-        name: 'crusader',
+        name: 'Knight',
         img: 'https://static.wikia.nocookie.net/finalfantasy/images/c/c8/WotV_Agrias.png  ',
     },
     {
         id: String(Math.random()),
         type: "char",
-        name: 'ranger',
+        name: 'Archer',
         img: 'https://i.pinimg.com/originals/02/54/64/0254645c2624a84aac9a18e92df27c82.png',
     },
     ])
@@ -83,6 +83,15 @@ export default function Home() {
         }
     }
 
+    function createchar() {
+        let obj = {
+            id: String(Math.random()),
+            type: "char",
+            name: 'Priest',
+            img: 'https://i.pinimg.com/originals/c6/67/96/c66796cf76594c938133a12f4ba5afe4.png',
+        }
+        setchars(chars => [obj, ...chars])
+    }
     return (
         <div className={styles.container} id='container'>
             <Head>
@@ -108,7 +117,7 @@ export default function Home() {
                     <a href="#">DICES</a>
                 </nav>
 
-                <div className={styles.creator}>
+                <div className={styles.creator} onClick={createchar}>
                     <TiPlusOutline />
                 </div>
             </aside>
@@ -183,6 +192,20 @@ export default function Home() {
         return (
             <div>
                 <h1>{data ? data.name : alt}</h1>
+            </div>
+        )
+    }
+
+
+
+    function createscree() {
+        return (
+            <div>
+                <form action={createchar}>
+
+
+                    <button>Done</button>
+                </form>
             </div>
         )
     }
